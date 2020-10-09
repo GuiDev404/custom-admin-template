@@ -1,0 +1,44 @@
+.ultimas-ventas {
+  border-radius: 4px;
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid rgb(236, 236, 236);
+}
+
+.venta {
+  border-radius: 4px;
+  background: #fbfbfb;
+  width: 96%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px;
+  box-shadow: 2px 9px 27px -23px rgba(0,0,0,0.75);
+  border-left: 4px solid royalblue;
+  border-right: 4px solid royalblue;
+  margin: 15px 0;
+}
+
+.sm_productos_qty {
+  color: rgb(148, 148, 148);
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.venta_details_right__fecha {
+  font-size: 13px;
+  vertical-align: middle;
+}
+
+.venta_details_right__icon {
+  vertical-align: middle;
+}
+
+.nota {
+  color: #909090;
+  font-size: 12px;
+}
+
+.nota > a {
+  color: royalblue !important;
+}

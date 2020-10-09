@@ -1,0 +1,23 @@
+.dashboard {
+  width: 90%;
+  margin: 10px auto;
+}
+
+.dashboard__header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;  
+  align-items: center;
+  margin: 5px;
+}
+
+.dashboard__header__btn {
+  border: 1px solid #272727;       
+  border-bottom: 3px solid #3e4044;
+  border-radius: 4px;
+}
+
+@media screen and (max-width: 480px){
+  .dashboard__header__btn  {
+    flex-basis: 100%;
+  }

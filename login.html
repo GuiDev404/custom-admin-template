@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script src="https://kit.fontawesome.com/3cffb87ddb.js" crossorigin="anonymous"></script>      
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+
+ <section class="login">
+    <header class="header">
+      <img src="./img/brand.png" class="header__img" alt="logo">
+      <h4 class="header__title"> Iniciar Sesion </h4>
+    </header>
+
+    <form action="" class="form">
+
+      <fieldset class="fieldset__email">
+        <legend class="fieldset__legend"> 
+          <label for="correo"> Correo Electronico  </label>
+        </legend>
+        <input type="text" id="correo" class="form__input__email" placeholder="Ingrese su email">        <small id="error_email" class="error_email d--none"> </small>
+      </fieldset>
+
+      <fieldset class="fieldset__psw">
+        <legend class="fieldset__legend"> 
+          <label for="contraseña" >Contraseña</label>
+        </legend>
+        <input type="password" class="form__input__contraseña" id="contraseña" placeholder="Ingrese su contraseña">
+        <small id="error_psw" class="error_psw d--none"> </small>
+      </fieldset>
+
+      <button type="submit" id="btn_login" class="form__btn_login btn--general"> Ingresar </button>
+      <button type="submit" class="form__btn__no-account btn--general"> ¿No tienes cuenta? </button>
+    </form>
+ </section>
+
+ <script>
+    const input_correo = document.getElementById('correo');
+    const btn_login = document.getElementById('btn_login');
+
+    function showErrMsg(msg, style) {
+      const error_email = document.getElementById('error_email');
+        error_email.classList.toggle(style);
+        error_email.innerHTML = msg;
+
+      setTimeout(arg => {
+        error_email.innerHTML = arg.msg;
+        error_email.classList.toggle(arg.style);
+      }, 2500, { msg: '', style  })
+    }
+
+    function validarEmail(e) {
+      e.preventDefault();
+      let input_value = input_correo.value.trim();
+
+      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(input_value)){
+        window.location.assign(`${window.location.origin}/index.html`);
+
+        return true;
+      }
+      
+      showErrMsg('Email no valido 😔','d--none
+      return false;
+    }
+
+    input_correo.focus();
+    btn_login.addEventListener('click', validarEmail)
+ </script>
+</div>  
+</body>
+</html>

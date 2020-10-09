@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script src="https://kit.fontawesome.com/3cffb87ddb.js" crossorigin="anonymous"></script>      
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"> -->
+
+  <link rel="stylesheet" href="./css/most_sold.css">
+  <link rel="stylesheet" href="./css/list.css">
+  <link rel="stylesheet" href="./css/grafico.css">
+  <link rel="stylesheet" href="./css/more_information.css">
+  <link rel="stylesheet" href="./css/small_card.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/dashboard.css">
+</head>
+<body>
+  
+<div class="container">
+
+  <div class="navbar-secondary__brand">
+      <a href="/Home/About" class="brand vertical--middle">
+          <img src="./img/icon.png" class="brand__icon vertical--middle" alt="brand__icon"/>  
+      </a>
+  </div>
+
+  <nav class="navbar-secondary">
+      <div class="user-account">
+          <aside class="fecha_actual">
+            <small class="fecha" id="fecha"></small>
+          </aside>
+          <details class="user-account__info">
+              <summary class="user-account__user-data no--selection">
+                <span class="vertical--middle"> guidev404 </span>
+                <img src="./img/user_image.png" class="user__icon vertical--middle" alt="user_icon" />
+              </summary>
+              <ul class="user-account__options">
+                  <li class="item"><a href="" class="item__option"> Perfil </a></li>
+                  <li class="item"><a href="" class="item__option"> Configuracion </a></li>
+                  <li class="item"><a href="/login.html" class="item__option"> Cerrar Sesion </a></li>
+              </ul>
+          </details>
+      </div>
+  </nav>
+  <nav class="navbar-main">
+      <a href="/Ventas/Index" class="navbar__menu-item" title="Ventas">
+          <span class="fas fa-dollar-sign icon vertical--middle"> </span>
+          <span class="item_txt vertical--middle"> Ventas </span>
+      </a>
+      <a href="/Productoes/Index" class="navbar__menu-item">
+          <span class="fas fa-box icon vertical--middle"> </span>
+          <span class="item_txt vertical--middle"> Productos </span>
+      </a>
+      <a href="/Categorias/Index" class="navbar__menu-item">
+          <span class="fas fa-list icon vertical--middle"> </span>
+          <span class="item_txt vertical--middle"> Categoria </span>
+      </a>
+      <a href="/Stocks/Index" class="navbar__menu-item">
+          <span class="fas fa-cubes icon vertical--middle"> </span>
+          <span class="item_txt vertical--middle"> Stock </span>
+      </a>
+      <a href="/Proveedore/Index" class="navbar__menu-item">
+          <span class="fas fa-truck icon vertical--middle"> </span>
+          <span class="item_txt vertical--middle"> Proveedores </span>
+      </a>
+      <a href="/Localidads/Index" class="navbar__menu-item">
+          <span class="fas fa-building icon vertical--middle"> </span>
+          <span class="item_txt vertical--middle"> Localidades </span>
+      </a>
+  </nav>
+
+  <main class="main-content">
+   <div class="dashboard">
+
+    <header class="dashboard__header">
+        <h1 class="dashboard__header__title">Dashboard</h1>
+        <button class="dashboard__header__btn btn cursor--pointer" id="btn_reporte"> 
+            <i class="fas fa-file-pdf"></i>
+            <span id="month"> Reporte Mes </span>
+        </button>
+    </header>  
+
+    <section class="resumen-items">
+        <div class="small-card ">
+            <div class="small-card__info">
+                <h3>Ganado (Mes)</h3>
+                <h2>$40.10</h2>
+            </div>
+            <div class="small-card__icon">
+                <i class="far fa-money-bill-alt"></i>
+            </div>
+        </div>
+
+        <div class="small-card ">
+            <div class="small-card__info">
+                <h3>Stock </h3>
+                <h2> - &nbsp;&nbsp;&nbsp;&nbsp; </h2>
+            </div>
+            <div class="small-card__icon">
+                <i class="fas fa-cubes"></i>
+            </div>
+        </div>
+
+        <div class="small-card ">
+            <div class="small-card__info">
+                <h3>Ventas (Mes)</h3>
+                <h2>30</h2>
+            </div>
+            <div class="small-card__icon">
+                <i class="fas fa-dollar-sign"></i>
+            </div>
+        </div>
+
+        <div class="small-card ">
+            <div class="small-card__info">
+                <h3>Proveedores </h3>
+                <h2>4</h2>
+            </div>
+            <div class="small-card__icon">
+                <i class="fas fa-truck"></i>
+            </div>
+        </div>
+    </section>
+
+    <div class="mas_informacion">
+         <div class="grafico">
+            <h2 class="grafico_title"> Histograma
+                <a download="" id="download_img_grafico" class="download_img_grafico">Descargar imagen</a>    
+            </h2>
+            <canvas class="histograma" width="10" height="10" id="histograma"></canvas>
+         </div>
+
+         <section class="ultimas-ventas">
+             <ul class="ventas">
+                 <h2>Ultimas Ventas</h2>
+                 <li class="venta">
+                     <div class="venta_details_left">
+                         <p> <small class="sm_productos_qty"> 7 productos vendidos </small> </p>
+                         <h3>$ 10,50 </h3> 
+                     </div>
+                     <div class="venta_details_right">
+                         <i class="fas fa-calendar venta_details_right__icon" aria-hidden="true"></i> 
+                         <span class="venta_details_right__fecha">28/08/20</span>
+                     </div>
+                 </li>
+                 <li class="venta">
+                     <div class="venta_details_left">
+                         <p> <small class="sm_productos_qty"> 20 productos vendidos </small> </p>                         <h3>$ 1000,50 </h3> 
+                     </div>
+                     <div class="venta_details_right">
+                         <i class="fas fa-calendar venta_details_right__icon" aria-hidden="true"></i> 
+                         <span class="venta_details_right__fecha">11/09/20</span>
+                     </div>
+                 </li>
+                 <li class="venta">
+                     <div class="venta_details_left">
+                         <p> <small class="sm_productos_qty"> 13 productos vendidos </small> </p>                         <h3>$ 400,50 </h3> 
+                     </div>
+                     <div class="venta_details_right">
+                         <i class="fas fa-calendar venta_details_right__icon" aria-hidden="true"></i> 
+                         <span class="venta_details_right__fecha">23/09/20</span>
+                     </div>
+                 </li>
+             </ul>
+             <small class="nota"> 
+                 Para ver todas las ventas con sus detalles dirijase a <a href="/Ventas/Index">ventas</a>
+              </small>
+         </section>
+
+         <section class="productos_mas_vendidos">
+            <h2>Productos mas vendidos</h2>
+            <div class="list">
+                <img src="./img/empty_section.svg" class="list__empty_img" alt="lista vacia">
+                <small class="list__empty_msg">la lista esta vacia</small>
+            </div> 
+         </section>
+    </div>
+
+   </div>
+  </main>
+</div>  
+
+  <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js" ></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script> -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+  <script src="./js/app.js"></script>
+  <script src="./js/graficos.js"></script>
+</body>
+</html>

@@ -1,0 +1,277 @@
+@font-face {
+  font-family: 'Fira Code';
+  src: url('../fonts/FiraCode-Light.ttf');
+}
+
+:root {
+  --light-color: #f4f4f4;
+  --light-dark: #333742;
+  --font: 'Fira Code', 'Source Code Pro', monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  font-family: var(--font);
+}
+
+a {
+  text-decoration: none;
+  color: var(--light-color);
+}
+
+.btn {
+  background: transparent;
+  font-size: 15px;
+  padding: 5px 10px;
+  font-family: var(--font) !important;
+  border: none;
+}
+
+.btn:hover {
+  border-bottom: 1px solid #000;
+}
+
+.vertical--middle {
+  vertical-align: middle;
+}
+
+.no--selection {
+  user-select: none; 
+}
+
+.cursor--pointer {
+  cursor: pointer;
+}
+ 
+.d--none {
+  display: none;
+}
+
+/*  FLEX CLASS */
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.space-btw {
+  justify-content: space-between;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+.center-absolute {
+  justify-content: center;
+  align-items: center;
+}
+
+/*  */
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr); 
+}
+
+/* navbar brand */
+.navbar-secondary__brand {
+  grid-column: 1 / 3;
+  background: var(--light-dark);
+}
+
+.brand {
+  width: 100%;
+  margin-top: 3px;
+  display: inline-block;
+  text-align: center;
+  font-size: 25px;
+}
+
+.brand__icon {
+  width: 25px;
+  height: 25px;
+}
+
+/* navbar secondary */
+
+.navbar-secondary {
+  grid-column: 3 / -1;
+  background: #eeeeee;
+  height: 45px;
+  max-height: 45px;
+  padding: 10px;
+  box-shadow: 0px 4px 27px -16px rgba(0,0,0,0.75) !important;
+  z-index: 100;
+}
+
+.user-account {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.user__icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.icon, .item_txt {
+  display: inline-block;
+  font-size: 20px !important;
+  color: #f4f4f4 !important;
+  margin: 0 5px;
+}
+
+.user-account__info {
+  min-width: 16% !important;
+  text-align: left;
+}
+
+.user-account__user-data {
+  min-width: 100%;
+  display: inline-block;
+  border: 1px solid #000;
+  margin-top: -6px;
+  padding: 2px 10px;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-account__options {
+  background: #f6f6f6f6;
+  margin-top: 5px;
+  border: 1px solid #333742;
+  display: inline-block;
+  width: 100%;
+  border-radius: 3px;
+  padding: 5px;
+  margin-right: -5px;
+  text-align: center;
+}
+
+.item {
+  margin: 7px 0;
+}
+
+.item__option {
+  padding: 3px;
+  color: #1a1c20;
+}
+
+.item__option:hover {
+  border-bottom: 1px solid #1a1c20;
+}
+
+/* navbar main */
+
+.navbar-main {
+  grid-column: 1 / 3;
+
+  background: #1a1c20;
+  min-height: 95vh;
+  padding: 15px 0;
+}
+
+.navbar__menu-item {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  text-align: left;
+}
+
+.navbar__menu-item:hover {
+  background: var(--light-dark);
+}
+
+/* main contnet */
+
+.main-content {
+  grid-column: 3 / -1;
+  background: #f4f4f4;
+  min-height: 95vh;
+}
+
+
+@media screen and (max-width: 1160px) {
+  .icon, .item_txt {
+    text-align: center !important;
+    font-size: 16px !important;
+  }
+
+  .user-account__info {
+    min-width: 20% !important;
+  }
+}
+
+@media screen and (max-width: 975px){
+  .navbar-main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navbar__menu-item {
+    text-align: center !important;
+    padding: 10px 10px;
+    margin: 5px 0;
+  }
+  
+  .icon, .item_txt {
+    width: 100%;
+    margin: 5px 0;
+    text-align: center !important;
+  }
+  
+  .icon {
+    font-size: 30px !important;
+  }
+  
+  .item_txt {
+    font-size: 15px !important;
+  }
+
+  .user-account__info {
+    min-width: 30% !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .user-account {
+    display: block;
+    text-align: right;
+  }
+
+  .fecha_actual {
+    display: none;
+  }
+
+  .icon {
+    font-size: 25px !important;
+  }
+  
+  .item_txt {
+    font-size: 10px !important;
+  }
+
+  .user-account__info {
+    width: 70% ;
+    margin-left: auto;
+  }
+}

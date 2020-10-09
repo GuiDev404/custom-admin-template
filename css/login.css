@@ -1,0 +1,106 @@
+:root {
+  --login-dominant-color:#cfcfcf;      
+  --radius: 4px;
+  --radius-sm: 2.5px;
+  --font: 'Source Code Pro', monospace;
+  --space-sm: 5px;
+  --space-md: 10px;
+  --space-xl: 15px;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: var(--font);
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f4f4f4;
+}
+
+/* login */
+
+.login {
+  width: 500px;
+  border:  1px solid var(--login-dominant-color);
+  border-radius: var(--radius);
+  padding: 15px;
+  background: #fafafa;
+  box-shadow: 0 9px 34px -18px rgba(0, 0, 0, 0.616);
+}
+
+.btn--general {
+  display: block;
+  padding: var(--space-md) 5px;
+  border: none;
+  outline: none;
+  width: 100%;
+  color: #fff;
+  font-size: 17px;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+}
+
+/* header */
+
+.header {
+  text-align: center;
+  margin: var(--space-md);
+}
+
+.header__img {
+  width: 75px;
+  height: 75px;
+  margin-bottom: var(--space-md);
+}
+
+/* form */
+
+.form__btn_login {
+  margin: var(--space-md) 0;
+  background: #78c8e6;
+  font-weight: bold;
+}
+
+.form__btn__no-account {
+  background: #b1e1f6;
+  color: #4e4e4e;
+}
+
+.fieldset__email, .fieldset__psw {
+  padding: var(--space-md);
+  border: 1px solid var(--login-dominant-color);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.fieldset__legend {
+  padding: 0 var(--space-md);
+  color: rgb(31, 31, 31);
+}
+
+.form__input__email, .form__input__contraseña {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--login-dominant-color);
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  outline-color: #a6d0e4;
+}
+
+/* error */
+
+.error_email, 
+.error_psw {
+  color: rgb(251, 60, 54);
+  padding: 5px;
+}

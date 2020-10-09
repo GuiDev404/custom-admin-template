@@ -1,0 +1,22 @@
+.productos_mas_vendidos {
+  border-radius: 4px;
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid rgb(236, 236, 236);
+}
+
+.list {
+  width: 100%;
+  text-align: center;
+}
+
+.list__empty_img {
+  text-align: center;
+  padding: 10px;
+  width: 150px;
+  filter: drop-shadow(1px 2px 4px rgba(0, 0, 0, 0.459));
+}
+
+.list__empty_msg {
+  display: block;
+}
